@@ -3,3 +3,5 @@ node_modules
 build
 .cache
 yarn-error.log
+www
+dist
