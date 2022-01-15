@@ -1,14 +1,9 @@
 import { Config } from '@stencil/core';
-import { reactOutputTarget as react } from '@stencil/react-output-target';
 
 export const config: Config = {
     namespace: 'joy-stick',
+    buildEs5:true,
     outputTargets: [
-        react({
-            componentCorePackage: 'joy-stick',
-            proxiesFile: './react/src/components/stencil-generated/index.ts',
-            includeDefineCustomElements: true,
-        }),
         {
             type: 'dist',
             esmLoaderPath: './loader'

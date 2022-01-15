@@ -1,7 +1,7 @@
 import {Component, Prop, h, State} from '@stencil/core';
-import {JoystickShape} from "./enums/shape.enum";
-import {shapeFactory} from "./shapes/shape.factory";
-import {shapeBoundsFactory} from "./shapes/shape.bounds.factory";
+import {JoystickShape} from "../enums/shape.enum";
+import {shapeFactory} from "../shapes/shape.factory";
+import {shapeBoundsFactory} from "../shapes/shape.bounds.factory";
 
 
 enum InteractionEvents {
@@ -45,9 +45,10 @@ enum RadianQuadrantBinding {
     BottomLeft = -0.785398163
 }
 @Component({
-    tag: 'joy-stick'
+    tag: 'joy-stick',
+    shadow: true
 })
-class Joystick {
+export class Joystick {
 
     @Prop() size?: number;
     @Prop() baseColor?: string;
@@ -414,6 +415,3 @@ class Joystick {
     }
 }
 
-export {
-    Joystick
-};
