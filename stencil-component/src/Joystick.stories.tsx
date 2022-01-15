@@ -4,7 +4,7 @@ import {storiesOf} from "@storybook/react";
 import {action} from '@storybook/addon-actions';
 import Tilt from 'react-parallax-tilt';
 
-import {IJoystickUpdateEvent, Joystick} from "./Joystick";
+import {IJoystickUpdateEvent, Joystick} from "../../react-component/src/Joystick";
 import {JoystickShape} from "./enums/shape.enum";
 import {useState} from "react";
 import './stories.css';

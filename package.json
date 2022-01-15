@@ -2,6 +2,7 @@
   "name": "react-joystick-component",
   "description": "A snazzy React joystick component",
   "version": "1.4.0",
+  "module": "./dist/index.js",
   "keywords": [
     "react",
     "joystick",
@@ -9,22 +10,23 @@
     "component",
     "typescript"
   ],
-  "main": "build/lib/index.js",
-  "types": "build/lib/index.d.ts",
-  "files": [
-    "build/lib"
-  ],
+  "collection": "./dist/collection/collection-manifest.json\n",
+  "main": "./dist/index.cjs.js",
+  "types": "./dist/types/components.d.ts",
+
   "scripts": {
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build": "tsc",
     "prepublish": "yarn build",
     "deploy-storybook": "storybook-to-ghpages",
-    "lint": "tslint -c tslint.json 'src/**/*.tsx' --fix && eslint src/**/*.tsx --fix --ext .ts"
+    "lint": "tslint -c tslint.json 'stencil-component/src/**/*.tsx' --fix && eslint src/**/*.tsx --fix --ext .ts",
+    "generate": "npx stencil-component generate"
   },
   "repository": "https://github.com/elmarti/react-joystick-component",
   "author": "elmarti elmarti.tech@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "@stencil/react-output-target": "^0.2.1",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
@@ -49,10 +51,14 @@
     "storybook-addon-jsx": "^7.3.14",
     "ts-jest": "^27.1.2",
     "tslint": "^6.1.3",
-    "typescript": "4.5.4"
+    "typescript": "4.5.4",
+    "workbox-build": "^6.4.2"
   },
   "peerDependencies": {
     "react": "17.0.2",
     "react-dom": "17.0.2"
+  },
+  "dependencies": {
+    "@stencil/core": "^2.12.1"
   }
 }

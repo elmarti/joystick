@@ -7,9 +7,10 @@
     "sourceMap": true,
     "allowJs": false,
     "jsx": "react",
+    "jsxFactory": "h",
     "moduleResolution": "node",
-    "rootDir": "src",
-    "baseUrl": "src",
+    "rootDir": "stencil",
+    "baseUrl": "stencil-component/src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -21,6 +22,9 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true
   },
-  "include": ["src/**/*", "types/**/*"],
-  "exclude": ["node_modules", "build", "scripts", "src/joystick.stories.tsx"]
+  "include": [
+    "stencil-component/**/*", "./types/**/*"],
+  "exclude": ["node_modules", "build", "scripts",
+    "stencil-component/src/joystick.stories.tsx"
+  ]
 }
