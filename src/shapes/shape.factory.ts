@@ -4,11 +4,11 @@ export const shapeFactory = (shape: JoystickShape, size: number) =>{
     switch (shape){
         case JoystickShape.Circle:
             return {
-                borderRadius:size,
+                borderRadius:`${size}px`,
             };
         case JoystickShape.Square:
             return  {
-                borderRadius: Math.sqrt(size)
+                borderRadius: `${Math.sqrt(size)}px`
             }
     }
 }

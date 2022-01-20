@@ -5,21 +5,67 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IJoystickUpdateEvent } from "./components/Joystick";
+import { JoystickShape } from "./enums/shape.enum";
 export namespace Components {
-
+    interface JoyStick {
+        "baseColor"?: string;
+        "baseImage"?: string;
+        "baseShape"?: JoystickShape;
+        "controlPlaneShape"?: JoystickShape;
+        "disabled"?: boolean;
+        "followCursor"?: boolean;
+        "minDistance"?: number;
+        "move"?: (event: IJoystickUpdateEvent) => void;
+        "size"?: number;
+        "start"?: (event: IJoystickUpdateEvent) => void;
+        "stickColor"?: string;
+        "stickImage"?: string;
+        "stickShape"?: JoystickShape;
+        "sticky"?: boolean;
+        "stop"?: (event: IJoystickUpdateEvent) => void;
+        "throttle"?: number;
+    }
 }
 declare global {
+    interface HTMLJoyStickElement extends Components.JoyStick, HTMLStencilElement {
+    }
+    var HTMLJoyStickElement: {
+        prototype: HTMLJoyStickElement;
+        new (): HTMLJoyStickElement;
+    };
     interface HTMLElementTagNameMap {
+        "joy-stick": HTMLJoyStickElement;
     }
 }
 declare namespace LocalJSX {
+    interface JoyStick {
+        "baseColor"?: string;
+        "baseImage"?: string;
+        "baseShape"?: JoystickShape;
+        "controlPlaneShape"?: JoystickShape;
+        "disabled"?: boolean;
+        "followCursor"?: boolean;
+        "minDistance"?: number;
+        "move"?: (event: IJoystickUpdateEvent) => void;
+        "size"?: number;
+        "start"?: (event: IJoystickUpdateEvent) => void;
+        "stickColor"?: string;
+        "stickImage"?: string;
+        "stickShape"?: JoystickShape;
+        "sticky"?: boolean;
+        "stop"?: (event: IJoystickUpdateEvent) => void;
+        "throttle"?: number;
+    }
     interface IntrinsicElements {
+        "joy-stick": JoyStick;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "joy-stick": LocalJSX.JoyStick & JSXBase.HTMLAttributes<HTMLJoyStickElement>;
         }
     }
 }
