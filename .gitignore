@@ -3,3 +3,6 @@ node_modules
 build
 .cache
 yarn-error.log
+dist
+www
+.DS_Store
